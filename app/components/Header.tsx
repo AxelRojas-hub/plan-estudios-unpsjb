@@ -90,17 +90,17 @@ export default function Header({
                     </div>
                 </div>
 
-                <div className="mt-1.5 flex flex-wrap items-center justify-center gap-2 text-[10px] md:mt-3 md:gap-4 md:text-[11px]">
-                    <div className="flex items-center gap-1">
-                        <div className="h-2.5 w-2.5 rounded border-2 border-slate-600/40 bg-[#0f1520] md:h-3 md:w-3" />
+                <div className="mt-1.5 flex flex-wrap items-center justify-center gap-3 text-[11px] md:mt-3 md:gap-5 md:text-sm">
+                    <div className="flex items-center gap-1.5">
+                        <div className="h-3.5 w-3.5 rounded border-2 border-slate-600/40 bg-[#0f1520] md:h-4 md:w-4" />
                         <span className="text-slate-400">Pendiente</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                        <div className="h-2.5 w-2.5 rounded border-2 border-amber-500 bg-[#1a1508] md:h-3 md:w-3" />
+                    <div className="flex items-center gap-1.5">
+                        <div className="h-3.5 w-3.5 rounded border-2 border-amber-500 bg-[#1a1508] md:h-4 md:w-4" />
                         <span className="text-slate-400">Regular</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                        <div className="h-2.5 w-2.5 rounded border-2 border-emerald-500 bg-[#0a1a14] md:h-3 md:w-3" />
+                    <div className="flex items-center gap-1.5">
+                        <div className="h-3.5 w-3.5 rounded border-2 border-emerald-500 bg-[#0a1a14] md:h-4 md:w-4" />
                         <span className="text-slate-400">Aprobada</span>
                     </div>
                     <div className="text-slate-500">

@@ -4,9 +4,9 @@ export interface Materia {
     codigo: string;
     nombre: string;
     año: number;
-    cuatrimestre: 0 | 1 | 2; // 0 = anual, 1 = 1er cuatrimestre, 2 = 2do cuatrimestre
+    cuatrimestre: 0 | 1 | 2;
     correlativas: string[];
-    condicion?: string; // condición general de correlatividad (ej. "6 asignaturas aprobadas")
+    condicion?: string;
     cargaHoraria?: number;
     esOptativa?: boolean;
     grupoOptativa?: string;

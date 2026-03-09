@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
-import { EstadoMateria } from "../types";
+import { EstadoMateria, Materia } from "../types";
 
 interface ProgresoUsuario {
     carreraId: string | null;
@@ -98,6 +98,18 @@ export function useProgresoUsuario() {
         [progreso.materias]
     );
 
+    const estaDesbloqueada = useCallback(
+        (codigo: string, materias: Materia[]): boolean => {
+            const materia = materias.find((m) => m.codigo === codigo);
+            if (!materia || !materia.correlativas || materia.correlativas.length === 0) return true;
+            return materia.correlativas.every((cod) => {
+                const estado = progreso.materias[cod] || "pendiente";
+                return estado === "aprobada" || estado === "regular";
+            });
+        },
+        [progreso.materias]
+    );
+
     const isPrimeraVez = progreso.carreraId === null;
 
     return {
@@ -106,6 +118,7 @@ export function useProgresoUsuario() {
         handleCicloEstado,
         setCarrera,
         puedeCursar,
+        estaDesbloqueada,
         isPrimeraVez,
     };
 }

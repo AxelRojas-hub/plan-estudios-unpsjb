@@ -16,6 +16,7 @@ export interface MateriaCardProps {
     isDestacada: boolean;
     isSeleccionada: boolean;
     isAtenuada: boolean;
+    isBloqueada: boolean;
     onSeleccionar: (codigo: string) => void;
     onCiclarEstado: (codigo: string) => void;
     onMostrarOptativas?: (grupo: string) => void;
@@ -46,6 +47,7 @@ export default function MateriaCard({
     isDestacada,
     isSeleccionada,
     isAtenuada,
+    isBloqueada,
     onSeleccionar,
     onCiclarEstado,
     onMostrarOptativas,
@@ -96,6 +98,7 @@ export default function MateriaCard({
         w-full md:rounded-lg md:border-2 md:min-w-[140px] md:max-w-[400px] md:mx-auto md:px-3 md:py-2
         ${getEstilosEstado()}
         ${isAtenuada ? "opacity-20 blur-[2px]" : "opacity-100"}
+        ${isBloqueada ? "opacity-60 grayscale" : ""}
       `}
         >
             <div className="flex flex-col gap-0">
@@ -103,7 +106,7 @@ export default function MateriaCard({
                     {materia.codigo}
                 </span>
                 <span className="text-[10px] font-medium leading-tight text-slate-100 md:text-xs">
-                    {materia.nombre}
+                    {materia.nombre} {isBloqueada && "🔒"}
                 </span>
                 {materia.condicion && (
                     <span className="mt-0.5 text-[9px] text-slate-400 md:text-[10px]">
@@ -119,18 +122,23 @@ export default function MateriaCard({
                     <button
                         onClick={(e) => {
                             e.stopPropagation();
-                            onCiclarEstado(materia.codigo);
+                            if (!isBloqueada) {
+                                onCiclarEstado(materia.codigo);
+                            }
                         }}
+                        disabled={isBloqueada}
                         className={`rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide 
               transition-colors border min-w-[24px] text-center md:rounded-md md:px-2.5 md:py-1 md:text-xs md:min-w-[36px]
-              ${estado === "pendiente"
-                                ? "border-slate-600 text-slate-400 hover:bg-slate-700 hover:text-slate-200"
-                                : estado === "regular"
-                                    ? "border-amber-600/50 text-amber-400 hover:bg-amber-900/30"
-                                    : "border-emerald-600/50 text-emerald-400 hover:bg-emerald-900/30"
+              ${isBloqueada
+                                ? "border-slate-800 text-slate-600 cursor-not-allowed opacity-50"
+                                : estado === "pendiente"
+                                    ? "border-slate-600 text-slate-400 hover:bg-slate-700 hover:text-slate-200"
+                                    : estado === "regular"
+                                        ? "border-amber-600/50 text-amber-400 hover:bg-amber-900/30"
+                                        : "border-emerald-600/50 text-emerald-400 hover:bg-emerald-900/30"
                             }
             `}
-                        title={`Cambiar a ${ETIQUETAS_ESTADO[SIGUIENTE_ESTADO[estado]]}`}
+                        title={isBloqueada ? "Materia bloqueada por correlativas" : `Cambiar a ${ETIQUETAS_ESTADO[SIGUIENTE_ESTADO[estado]]}`}
                     >
                         ⟳
                     </button>

@@ -19,12 +19,14 @@ export interface DiagramaPlanProps {
     materias: Materia[];
     getEstado: (codigo: string) => EstadoMateria;
     handleCicloEstado: (codigo: string) => void;
+    estaDesbloqueada: (codigo: string) => boolean;
 }
 
 export default function DiagramaPlan({
     materias,
     getEstado,
     handleCicloEstado,
+    estaDesbloqueada,
 }: DiagramaPlanProps) {
     const refContenedor = useRef<HTMLDivElement>(null);
     const refsTarjetas = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -86,7 +88,6 @@ export default function DiagramaPlan({
         });
     }, [datosFlechas]);
 
-    // Recalcula las flechas cuando cambia el tamaño de la ventana o el scroll
     useEffect(() => {
         const timer = setTimeout(calcularFlechas, 150);
         window.addEventListener("resize", calcularFlechas);
@@ -96,7 +97,6 @@ export default function DiagramaPlan({
         };
     }, [calcularFlechas, materias]);
 
-    // Recalcula las flechas cuando cambia el scroll
     useEffect(() => {
         const contenedor = refContenedor.current;
         if (!contenedor) return;
@@ -133,7 +133,6 @@ export default function DiagramaPlan({
         return chain.has(from) && chain.has(to);
     };
 
-    // Detecta click fuera de la materia seleccionada y cerrar el popup de optativas
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
@@ -241,6 +240,7 @@ export default function DiagramaPlan({
                                     const isDestacada = materiasDestacadas.has(materia.codigo);
                                     const isAtenuada =
                                         materiaSeleccionada !== null && !isSeleccionada && !isDestacada;
+                                    const isBloqueada = !estaDesbloqueada(materia.codigo);
 
                                     return (
                                         <MateriaCard
@@ -250,6 +250,7 @@ export default function DiagramaPlan({
                                             isDestacada={isDestacada}
                                             isSeleccionada={isSeleccionada}
                                             isAtenuada={isAtenuada}
+                                            isBloqueada={isBloqueada}
                                             onSeleccionar={handleSeleccion}
                                             onCiclarEstado={handleCicloEstado}
                                             onMostrarOptativas={handleMostrarOptativas}

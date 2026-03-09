@@ -18,6 +18,7 @@ export default function Home() {
     getEstado,
     handleCicloEstado,
     setCarrera,
+    estaDesbloqueada,
   } = useProgresoUsuario();
 
   const [mounted, setMounted] = useState(false);
@@ -68,6 +69,7 @@ export default function Home() {
             materias={carreraSeleccionada.materias}
             getEstado={getEstado}
             handleCicloEstado={handleCicloEstado}
+            estaDesbloqueada={(codigo) => estaDesbloqueada(codigo, carreraSeleccionada.materias)}
           />
           {carreraSeleccionada.requisitos && carreraSeleccionada.requisitos.length > 0 && (
             <SeccionRequisitos
