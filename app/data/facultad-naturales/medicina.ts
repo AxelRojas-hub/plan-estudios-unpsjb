@@ -11,8 +11,8 @@ const medicina: Carrera = {
         { codigo: "02", nombre: "Comprensión de Textos", año: 1, cuatrimestre: 1, correlativas: [], cargaHoraria: 90 },
         { codigo: "03", nombre: "Anatomía I", año: 1, cuatrimestre: 1, correlativas: [], cargaHoraria: 90 },
         { codigo: "04", nombre: "Histología y Embriología I", año: 1, cuatrimestre: 1, correlativas: [], cargaHoraria: 90 },
-        { codigo: "05", nombre: "Biofísica", año: 1, cuatrimestre: 2, correlativas: [], cargaHoraria: 105 },
-        { codigo: "06", nombre: "Anatomía II", año: 1, cuatrimestre: 2, correlativas: ["01", "02", "03"], cargaHoraria: 90 },
+        { codigo: "05", nombre: "Biofísica", año: 1, cuatrimestre: 2, correlativas: ["01", "02", "03"], cargaHoraria: 105 },
+        { codigo: "06", nombre: "Anatomía II", año: 1, cuatrimestre: 2, correlativas: ["01", "03", "04"], cargaHoraria: 90 },
         { codigo: "07", nombre: "Histología y Embriología II", año: 1, cuatrimestre: 2, correlativas: ["01", "03", "04"], cargaHoraria: 90 },
         { codigo: "08", nombre: "Ciencias Sociales y Medicina", año: 1, cuatrimestre: 2, correlativas: ["02"], cargaHoraria: 75 },
 

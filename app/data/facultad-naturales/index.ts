@@ -11,6 +11,7 @@ import tecnicoUnivQuimica from "./tec-universitario-quimica";
 import licenciaturaQuimica from "./licenciatura-quimica";
 import profesoradoQuimica from "./profesorado-quimica";
 import guardaparqueUniversitario from "./guardaparque-universitario";
+import medicina from "./medicina";
 
 const carreras: Carrera[] = [
     geologo,
@@ -23,7 +24,8 @@ const carreras: Carrera[] = [
     tecnicoUnivQuimica,
     licenciaturaQuimica,
     profesoradoQuimica,
-    guardaparqueUniversitario
+    guardaparqueUniversitario,
+    medicina
 ];
 
 export default carreras;
