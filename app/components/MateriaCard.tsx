@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import { EstadoMateria } from "../types";
 
@@ -76,8 +77,8 @@ export default function MateriaCard({
 
     const nombreAMostrar = optativaDetalles ? optativaDetalles.nombre : materia.nombre;
     const codigoAMostrar = optativaDetalles ? optativaDetalles.codigo : materia.codigo;
-    const condicionAMostrar = optativaDetalles && optativaDetalles.correlativas.length > 0 
-        ? optativaDetalles.correlativas.join(", ") 
+    const condicionAMostrar = optativaDetalles && optativaDetalles.correlativas.length > 0
+        ? optativaDetalles.correlativas.join(", ")
         : materia.condicion;
 
     const getRealEstado = () => {
@@ -134,11 +135,11 @@ export default function MateriaCard({
                 <span className="text-[8px] font-mono text-slate-400 md:text-[10px]">
                     {codigoAMostrar}
                 </span>
-                
+
                 {(!isOptativa || optativaDetalles) ? (
                     <>
                         <span className="text-[10px] font-medium leading-tight text-slate-100 md:text-xs">
-                            {nombreAMostrar} {isBloqueada && "🔒"}
+                            {nombreAMostrar} {isBloqueada && (<LockOutlinedIcon fontSize="inherit" className="ml-1 text-slate-400 align-middle" />)}
                         </span>
                         {condicionAMostrar && (
                             <span className="mt-0.5 text-[9px] text-slate-400 md:text-[10px]">
@@ -161,7 +162,7 @@ export default function MateriaCard({
                         </button>
                     </div>
                 )}
-                
+
                 <div className="mt-auto pt-0.5 flex items-center justify-between md:pt-1">
                     <span
                         className={`text-[8px] font-semibold uppercase tracking-wider md:text-[10px] ${COLORES_ESTADO[estadoMostrar]}`}

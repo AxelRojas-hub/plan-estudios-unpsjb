@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 export interface OptativaPosible {
     codigo: string;
@@ -33,10 +34,10 @@ export default function ModalSeleccionOptativa({
     }, []);
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-            <div 
-                className="absolute inset-0" 
-                onClick={onClose} 
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+            <div
+                className="absolute inset-0"
+                onClick={onClose}
             />
             <div className="relative flex w-full max-w-lg flex-col rounded-2xl border border-slate-700/60 bg-slate-900/95 p-5 shadow-2xl md:p-6">
                 <div className="mb-4 flex items-start justify-between">
@@ -72,35 +73,33 @@ export default function ModalSeleccionOptativa({
                     {optativas.map((opt) => {
                         const isBloqueada = !estaDesbloqueada(opt.codigo);
                         return (
-                        <button
-                            key={opt.codigo}
-                            onClick={() => !isBloqueada && onSelect(opt.codigo)}
-                            disabled={isBloqueada}
-                            className={`flex flex-col items-start gap-1 rounded-xl border p-4 text-left transition-all ${
-                                isBloqueada 
-                                ? "border-slate-800/50 bg-slate-800/20 opacity-60 cursor-not-allowed grayscale"
-                                : "border-slate-700/50 bg-slate-800/50 hover:border-cyan-500/50 hover:bg-slate-700/50 active:scale-[0.98]"
-                            }`}
-                        >
-                            <div className="flex w-full items-center justify-between">
-                                <span className={`text-sm font-semibold ${isBloqueada ? "text-slate-500" : "text-slate-200"}`}>
-                                    {opt.nombre} {isBloqueada && "🔒"}
-                                </span>
-                                <span className={`rounded px-2 py-0.5 font-mono text-xs ${isBloqueada ? "bg-slate-900/50 text-slate-600" : "bg-slate-900 text-slate-400"}`}>
-                                    {opt.codigo}
-                                </span>
-                            </div>
-                            {opt.correlativas.length > 0 ? (
-                                <span className="text-xs text-slate-500">
-                                    Requiere: {opt.correlativas.join(", ")}
-                                </span>
-                            ) : (
-                                <span className="text-xs text-slate-500">
-                                    Sin correlativas directas requeridas
-                                </span>
-                            )}
-                        </button>
-                    )})}
+                            <button
+                                key={opt.codigo}
+                                onClick={() => onSelect(opt.codigo)}
+                                className={`flex flex-col items-start gap-1 rounded-xl border p-4 text-left transition-all 
+                                    border-slate-700/50 bg-slate-800/50 hover:border-cyan-500/50 hover:bg-slate-700/50 active:scale-[0.98]
+                                `}
+                            >
+                                <div className="flex w-full items-center justify-between">
+                                    <span className="text-sm font-semibold text-slate-200">
+                                        {opt.nombre} {isBloqueada && (<LockOutlinedIcon fontSize="inherit" className="ml-1 text-slate-400 align-middle" />)}
+                                    </span>
+                                    <span className="rounded px-2 py-0.5 font-mono text-xs bg-slate-900 text-slate-400">
+                                        {opt.codigo}
+                                    </span>
+                                </div>
+                                {opt.correlativas.length > 0 ? (
+                                    <span className={`text-xs ${isBloqueada ? "text-amber-500/80 font-medium" : "text-slate-500"}`}>
+                                        Requiere: {opt.correlativas.join(", ")}
+                                    </span>
+                                ) : (
+                                    <span className="text-xs text-slate-500">
+                                        Sin correlativas directas requeridas
+                                    </span>
+                                )}
+                            </button>
+                        )
+                    })}
                 </div>
             </div>
         </div>

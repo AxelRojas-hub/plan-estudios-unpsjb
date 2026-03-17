@@ -30,7 +30,7 @@ const licenciaturaInformatica: Carrera = {
         { codigo: "IF015", nombre: "Ingeniería de Software", año: 4, cuatrimestre: 1, correlativas: ["IF012", "MA006"], cargaHoraria: 150 },
         { codigo: "IF018", nombre: "Inteligencia Artificial", año: 4, cuatrimestre: 1, correlativas: ["IF013", "MA047"], cargaHoraria: 120 },
         { codigo: "IF019", nombre: "Redes y Transmisión de Datos", año: 4, cuatrimestre: 1, correlativas: ["IF011"], cargaHoraria: 135 },
-        { codigo: "IF016", nombre: "Aspectos Legales y Profesionales", año: 4, cuatrimestre: 2, correlativas: [], cargaHoraria: 60 },
+        { codigo: "IF016", nombre: "Aspectos Legales y Profesionales", condicion: "10 asignaturas aprobadas", año: 4, cuatrimestre: 2, correlativas: [], cargaHoraria: 60 },
         { codigo: "IF020", nombre: "Paradigmas y Lenguajes de Programación", año: 4, cuatrimestre: 2, correlativas: ["IF009", "IF013"], cargaHoraria: 120 },
         { codigo: "IF022", nombre: "Sistemas Distribuidos", año: 4, cuatrimestre: 2, correlativas: ["IF019"], cargaHoraria: 120 },
 
