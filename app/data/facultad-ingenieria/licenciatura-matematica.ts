@@ -16,7 +16,7 @@ const licenciaturaMatematica: Carrera = {
         // 2° Año - 1° Cuatrimestre
         { codigo: "MA052", nombre: "Geometría Métrica", año: 2, cuatrimestre: 1, correlativas: ["MA050"], cargaHoraria: 105 },
         { codigo: "MA053", nombre: "Principios de Análisis Matemático", año: 2, cuatrimestre: 1, correlativas: ["MA003"], cargaHoraria: 105 },
-        { codigo: "FI006", nombre: "Física General", año: 2, cuatrimestre: 1, correlativas: ["MA003"], cargaHoraria: 120 },
+        { codigo: "FI006", nombre: "Física General", año: 2, cuatrimestre: 2, correlativas: ["MA003"], cargaHoraria: 120 },
         // 2° Año - 2° Cuatrimestre
         { codigo: "MA054", nombre: "Álgebra Lineal", año: 2, cuatrimestre: 2, correlativas: ["MA050"], cargaHoraria: 105 },
         { codigo: "MA055", nombre: "Matemática Discreta", año: 2, cuatrimestre: 2, correlativas: ["MA050"], cargaHoraria: 105 },
@@ -40,9 +40,14 @@ const licenciaturaMatematica: Carrera = {
         // 4° Año - Anual
         { codigo: "MA090", nombre: "Optativa I", año: 4, cuatrimestre: 0, correlativas: [], cargaHoraria: 150, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "MA091", nombre: "Optativa II", año: 4, cuatrimestre: 2, correlativas: [], cargaHoraria: 150, esOptativa: true, grupoOptativa: "optativa2" },
+
+        //Optativas Descripcion
+        { codigo: "Optativa I", nombre: "Complemento de formación con aval de tutor. Acreditable mediante asignaturas/seminarios del departamento, o materias de áreas matemáticas de otras carreras/universidades.", año: 4, cuatrimestre: 0, correlativas: [], cargaHoraria: 150, esOptativa: true, grupoOptativa: "optativa1" },
+        { codigo: "Optativa II", nombre: "Complemento de formación con aval de tutor. Acreditable mediante asignaturas/seminarios del departamento, o materias de áreas matemáticas de otras carreras/universidades.", año: 4, cuatrimestre: 2, correlativas: [], cargaHoraria: 150, esOptativa: true, grupoOptativa: "optativa2" },
+
     ],
     requisitos: [
-        { codigo: "FA007", nombre: "Acreditación de Idioma" },
+        { codigo: "FA007", nombre: "Acreditación de Idioma", condicion: "Aprobada antes de comenzar el tercer año de la carrera" },
         { codigo: "MA092", nombre: "Tesis de grado", condicion: "12 Asignaturas aprobadas y tercer año cursado" },
     ],
 } satisfies Carrera;

@@ -43,9 +43,9 @@ const ingenieriaCivilHidraulica: Carrera = {
         { codigo: "FA003", nombre: "Ingeniería Legal", año: 4, cuatrimestre: 1, correlativas: [], condicion: "11 asignaturas aprobadas", cargaHoraria: 75 },
         { codigo: "CI023", nombre: "Puertos y Vías Navegables", año: 4, cuatrimestre: 1, correlativas: ["CI009", "CI013"], cargaHoraria: 90 },
         // 4° Año - 2° Cuatrimestre
-        { codigo: "CI001", nombre: "Aprovechamientos Hidráulicos", año: 4, cuatrimestre: 2, correlativas: ["CI013"], cargaHoraria: 60 },
+        { codigo: "CI001", nombre: "Aprovechamientos Hidráulicos", año: 4, cuatrimestre: 2, correlativas: ["CI014"], cargaHoraria: 60 },
         { codigo: "CI003", nombre: "Arquitectura y Urbanismo", año: 4, cuatrimestre: 2, correlativas: ["CI020"], cargaHoraria: 105 },
-        { codigo: "CI033", nombre: "Vías de Comunicación-H", año: 4, cuatrimestre: 2, correlativas: ["CI001", "CI024", "ES001"], cargaHoraria: 90 },
+        { codigo: "CI033", nombre: "Vías de Comunicación-H", año: 4, cuatrimestre: 2, correlativas: ["CI009", "CI024", "ES001"], cargaHoraria: 90 },
         { codigo: "CI041", nombre: "Proyecto I", año: 4, cuatrimestre: 2, correlativas: ["CI020"], cargaHoraria: 60 },
         // 4° Año - Anual
         { codigo: "CI015", nombre: "Hormigón I", año: 4, cuatrimestre: 0, correlativas: ["ES001", "ES005"], cargaHoraria: 135 },
@@ -65,9 +65,9 @@ const ingenieriaCivilHidraulica: Carrera = {
         { codigo: "CI043", nombre: "Proyecto de Ingeniería Civil - Orientación Hidráulica (Proyecto III)", año: 5, cuatrimestre: 0, correlativas: ["CI001", "CI041", "CI033", "CI023"], cargaHoraria: 90 },
 
         // Optativas (*) - pool compartido
-        { codigo: "CI035", nombre: "Construcciones Hidráulicas Especiales", año: 5, cuatrimestre: 2, correlativas: ["CI005", "CI013"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
+        { codigo: "CI035", nombre: "Construcciones Hidráulicas Especiales", año: 5, cuatrimestre: 2, correlativas: ["CI005", "CI014"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "CI036", nombre: "Fundaciones Especiales", año: 5, cuatrimestre: 2, correlativas: ["CI009"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
-        { codigo: "CI037", nombre: "Hidráulica Agrícola y Fluvial", año: 5, cuatrimestre: 2, correlativas: ["CI013"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
+        { codigo: "CI037", nombre: "Hidráulica Agrícola y Fluvial", año: 5, cuatrimestre: 2, correlativas: ["CI014"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "CI038", nombre: "Máquinas y Equipos de Construcción", año: 5, cuatrimestre: 2, correlativas: ["CI009", "CI020"], cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
     ],
     requisitos: [

@@ -24,8 +24,8 @@ const profesoradoUniversitarioMatematica: Carrera = {
         { codigo: "MA055", nombre: "Matemática Discreta", año: 2, cuatrimestre: 2, correlativas: ["MA050"], cargaHoraria: 105 },
         // 2° Año - Anual
         { codigo: "MA056", nombre: "Laboratorio II", año: 2, cuatrimestre: 0, correlativas: ["MA003", "MA051"], cargaHoraria: 105 },
-        { codigo: "MAB01", nombre: "Psicología Evolutiva", año: 2, cuatrimestre: 0, correlativas: [], cargaHoraria: 105 },
-        { codigo: "MAB02", nombre: "Didáctica General", año: 2, cuatrimestre: 0, correlativas: ["MA800"], cargaHoraria: 105 },
+        { codigo: "MA801", nombre: "Psicología Evolutiva", año: 2, cuatrimestre: 0, correlativas: [], cargaHoraria: 105 },
+        { codigo: "MA802", nombre: "Didáctica General", año: 2, cuatrimestre: 0, correlativas: ["MA800"], cargaHoraria: 105 },
 
         // 3° Año - 1° Cuatrimestre
         { codigo: "MA057", nombre: "Análisis de Variable Compleja", año: 3, cuatrimestre: 1, correlativas: ["MA053"], cargaHoraria: 105 },
@@ -36,7 +36,7 @@ const profesoradoUniversitarioMatematica: Carrera = {
         { codigo: "FI006", nombre: "Física General", año: 3, cuatrimestre: 2, correlativas: ["MA003"], cargaHoraria: 120 },
         { codigo: "MA804", nombre: "Sistema Educativo e Instituciones", año: 3, cuatrimestre: 2, correlativas: ["MA800"], cargaHoraria: 90 },
         // 3° Año - Anual
-        { codigo: "MA060", nombre: "Didáctica de la Matemática", año: 3, cuatrimestre: 0, correlativas: ["MA055", "MA056", "MA800", "MAB02"], cargaHoraria: 120 },
+        { codigo: "MA060", nombre: "Didáctica de la Matemática", año: 3, cuatrimestre: 0, correlativas: ["MA055", "MA056", "MA800", "MA802"], cargaHoraria: 120 },
 
         // 4° Año - 1° Cuatrimestre
         { codigo: "MA062", nombre: "Estructuras Algebraicas", año: 4, cuatrimestre: 1, correlativas: ["MA052", "MA054"], cargaHoraria: 105 },

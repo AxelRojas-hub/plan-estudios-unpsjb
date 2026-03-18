@@ -51,9 +51,9 @@ const ingenieriaCivil: Carrera = {
         { codigo: "CI_OP1", nombre: "Optativa I", año: 5, cuatrimestre: 1, correlativas: [], cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "CI_OP2", nombre: "Optativa II", año: 5, cuatrimestre: 1, correlativas: [], cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
         // 5° Año - 2° Cuatrimestre
-        { codigo: "CI026", nombre: "Proyecto de Ingeniería Civil (Orientación Construcciones)", año: 5, cuatrimestre: 2, correlativas: ["CI004", "CI009", "CI015", "CI010", "CI019"], cargaHoraria: 90 },
+        { codigo: "CI026", nombre: "Proyecto de Ingeniería Civil (Orientación Construcciones)", año: 5, cuatrimestre: 2, correlativas: ["CI004", "CI007", "CI009", "CI015", "CI010", "CI019"], cargaHoraria: 90 },
         // 5° Año - Anual
-        { codigo: "FA003", nombre: "Ingeniería Legal", año: 5, cuatrimestre: 0, correlativas: [], cargaHoraria: 75 },
+        { codigo: "FA003", nombre: "Ingeniería Legal", año: 5, cuatrimestre: 0, correlativas: [], condicion: "14 asignaturas aprobadas", cargaHoraria: 75 },
         { codigo: "FA001", nombre: "Gestión Ambiental", año: 5, cuatrimestre: 0, correlativas: [], condicion: "14 asignaturas aprobadas", cargaHoraria: 75 },
         { codigo: "CI031", nombre: "Hormigón II", año: 5, cuatrimestre: 0, correlativas: ["CI015"], cargaHoraria: 105 },
         { codigo: "CI018", nombre: "Ingeniería Sanitaria", año: 5, cuatrimestre: 0, correlativas: ["CI011", "QU001"], cargaHoraria: 75 },
