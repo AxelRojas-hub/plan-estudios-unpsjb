@@ -63,11 +63,11 @@ const ingenieriaEnPetroleo: Carrera = {
         // Optativas - pool compartido para Optativa I y II
         { codigo: "FA024", nombre: "Gestión Empresarial", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "FA025", nombre: "Seguridad Industrial", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
-        { codigo: "II012", nombre: "Principios de Calidad Total", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
+        { codigo: "IID12", nombre: "Principios de Calidad Total", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "QU018", nombre: "Fundamentos de Contaminación Ambiental", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "PE013", nombre: "Reservorios Avanzados", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
         { codigo: "PE014", nombre: "Seminario de Ingeniería en Petróleo", año: 5, cuatrimestre: 2, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 60, esOptativa: true, grupoOptativa: "optativa1" },
-        { codigo: "II015", nombre: "Seminario de Gestión de Proyectos", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
+        { codigo: "IID13", nombre: "Seminario de Gestión de Proyectos", año: 5, cuatrimestre: 1, correlativas: [], condicion: "16 asignaturas aprobadas", cargaHoraria: 45, esOptativa: true, grupoOptativa: "optativa1" },
     ],
     requisitos: [
         { codigo: "FA007", nombre: "Acreditación de Idioma", condicion: "Aprobada antes de comenzar el cuarto año de la carrera" },
