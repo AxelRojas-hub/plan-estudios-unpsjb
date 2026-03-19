@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { Carrera } from "../types";
 import { FACULTAD_NOMBRES } from "../data";
 
@@ -33,9 +34,11 @@ export default function ModalBienvenida({
             <div className="w-full max-w-md rounded-2xl border border-slate-300 bg-white p-8 shadow-2xl dark:border-slate-600/50 dark:bg-[#0d1424]">
                 <div className="mb-8 text-center">
                     <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center drop-shadow-sm dark:drop-shadow-lg">
-                        <img
+                        <Image
                             src="/logo512.webp"
                             alt="Logo UNPSJB"
+                            width={96}
+                            height={96}
                             className="h-full w-full object-contain drop-shadow-md dark:drop-shadow-2xl"
                         />
                     </div>

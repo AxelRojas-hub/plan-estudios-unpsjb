@@ -70,15 +70,22 @@ export function useProgresoUsuario() {
         [progreso.materias]
     );
 
-    const handleCicloEstado = useCallback((codigo: string) => {
+    const handleCicloEstado = useCallback((codigo: string, esRequisito: boolean = false) => {
         actualizarProgreso((prev) => {
             const actual = prev.materias[codigo] || "pendiente";
-            const siguiente: EstadoMateria =
-                actual === "pendiente"
-                    ? "regular"
-                    : actual === "regular"
-                        ? "aprobada"
-                        : "pendiente";
+            let siguiente: EstadoMateria = "pendiente";
+
+            if (esRequisito) {
+                siguiente = actual === "pendiente" ? "aprobada" : "pendiente";
+            } else {
+                siguiente =
+                    actual === "pendiente"
+                        ? "regular"
+                        : actual === "regular"
+                            ? "aprobada"
+                            : "pendiente";
+            }
+
             return {
                 ...prev,
                 materias: { ...prev.materias, [codigo]: siguiente },

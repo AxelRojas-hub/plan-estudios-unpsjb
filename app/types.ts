@@ -1,4 +1,5 @@
 export type EstadoMateria = "pendiente" | "regular" | "aprobada";
+export type EstadoRequisito = "pendiente" | "aprobada";
 
 export interface Materia {
     codigo: string;

@@ -79,7 +79,7 @@ export default function Home() {
             <SeccionRequisitos
               requisitos={carreraSeleccionada.requisitos}
               getEstado={getEstado}
-              handleCicloEstado={handleCicloEstado}
+              handleCicloEstado={(codigo) => handleCicloEstado(codigo, true)}
             />
           )}
           <WidgetProgreso
